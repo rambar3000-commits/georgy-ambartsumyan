@@ -527,6 +527,55 @@ main {
   font-size: 17px;
 }
 
+.contact-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(27px, 5vw, 56px);
+  margin-top: 6px;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+.contact-email {
+  border-bottom: 1px solid rgba(203, 232, 215, 0.4);
+  color: #e3eee7;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.45;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.contact-email:hover {
+  border-color: #f8f5ef;
+  color: #ffffff;
+}
+
+.qr-card {
+  margin: 0;
+  padding: 14px;
+  border-radius: 18px;
+  color: var(--green-deep);
+  background: #ffffff;
+}
+
+.qr-card img {
+  display: block;
+  width: 160px;
+  height: 160px;
+}
+
+.qr-card figcaption {
+  margin-top: 9px;
+  color: var(--green-deep);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .cta .button-primary {
   color: var(--green-deep);
   background: #f8f5ef;
@@ -695,6 +744,18 @@ main {
   .cta {
     margin-bottom: 46px;
     padding-inline: 25px;
+  }
+
+  .contact-panel {
+    flex-direction: column;
+  }
+
+  .contact-copy {
+    align-items: center;
+  }
+
+  .contact-email {
+    font-size: 15px;
   }
 
   .site-footer {
