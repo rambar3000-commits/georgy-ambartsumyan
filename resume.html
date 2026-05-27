@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Резюме - Георгий Амбарцумян</title>
+    <style>
+      :root {
+        --ink: #172a25;
+        --green: #115848;
+        --green-dark: #0c4035;
+        --sage: #e9f0ea;
+        --sand: #f6f2eb;
+        --gold: #bd8243;
+        --muted: #627068;
+        --line: #dbe1da;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--ink);
+        background: #d9d9d9;
+        font-family: "Segoe UI", Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto 12px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .page::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 8px;
+        background: var(--green);
+        content: "";
+      }
+
+      .content {
+        padding: 18mm 17mm 13mm;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1,
+      .display {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 1fr 108px;
+        gap: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .label {
+        margin-bottom: 11px;
+        color: var(--green);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        color: var(--green-dark);
+        font-size: 35px;
+        font-weight: 400;
+        letter-spacing: -0.045em;
+      }
+
+      .role {
+        margin: 9px 0 14px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.055em;
+        text-transform: uppercase;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 17px;
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .contact a {
+        color: var(--green);
+        text-decoration: none;
+      }
+
+      .qr {
+        justify-self: end;
+        text-align: center;
+      }
+
+      .qr img {
+        display: block;
+        width: 88px;
+        height: 88px;
+        margin-bottom: 5px;
+      }
+
+      .qr span {
+        color: var(--muted);
+        font-size: 8px;
+      }
+
+      .summary {
+        margin: 19px 0 16px;
+        color: #2e3d37;
+        font-size: 12.4px;
+        line-height: 1.6;
+      }
+
+      .summary strong {
+        color: var(--green);
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: 21px;
+        border-radius: 11px;
+        background: var(--sand);
+      }
+
+      .metric {
+        padding: 11px 8px 10px;
+        text-align: center;
+      }
+
+      .metric + .metric {
+        border-left: 1px solid #e4dfd7;
+      }
+
+      .metric b {
+        display: block;
+        color: var(--green);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-bottom: 12px;
+        color: var(--green);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-title::after {
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+        content: "";
+      }
+
+      .roles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .role-card {
+        min-height: 76px;
+        padding: 10px 10px 9px;
+        border-radius: 9px;
+        background: var(--sage);
+      }
+
+      .role-card h3 {
+        margin-bottom: 5px;
+        color: var(--green-dark);
+        font-size: 10.5px;
+      }
+
+      .role-card p {
+        color: #4b5c55;
+        font-size: 8.6px;
+        line-height: 1.42;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 99px 1fr;
+        gap: 14px;
+        padding: 11px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .date {
+        color: var(--muted);
+        font-size: 9.5px;
+        line-height: 1.5;
+      }
+
+      .date strong {
+        display: block;
+        margin-top: 4px;
+        color: var(--green);
+        font-size: 11px;
+      }
+
+      .job h3 {
+        margin-bottom: 3px;
+        color: var(--ink);
+        font-size: 12.2px;
+      }
+
+      .company {
+        margin-bottom: 7px;
+        color: var(--green);
+        font-size: 9.4px;
+        font-style: italic;
+      }
+
+      ul {
+        display: grid;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 12px;
+        color: #394841;
+        font-size: 9.2px;
+        line-height: 1.4;
+      }
+
+      li::before {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 6px;
+        height: 1px;
+        background: var(--gold);
+        content: "";
+      }
+
+      .footer {
+        position: absolute;
+        right: 17mm;
+        bottom: 9mm;
+        left: 17mm;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8px;
+      }
+
+      .bottom-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 18px;
+        margin-top: 15px;
+      }
+
+      .skill {
+        margin-bottom: 8px;
+      }
+
+      .skill h3 {
+        margin-bottom: 3px;
+        color: var(--green);
+        font-size: 9px;
+        text-transform: uppercase;
+      }
+
+      .skill p {
+        color: #44534d;
+        font-size: 8.6px;
+        line-height: 1.4;
+      }
+
+      .education-item {
+        margin-bottom: 8px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .education-item .year {
+        margin-bottom: 3px;
+        color: var(--gold);
+        font-size: 8px;
+        font-weight: 700;
+      }
+
+      .education-item h3 {
+        margin-bottom: 3px;
+        color: var(--green-dark);
+        font-size: 9.5px;
+      }
+
+      .education-item p {
+        color: var(--muted);
+        font-size: 8.2px;
+        line-height: 1.35;
+      }
+
+      .language {
+        margin-top: 4px;
+        color: #44534d;
+        font-size: 8.4px;
+        line-height: 1.45;
+      }
+
+      @media screen {
+        body {
+          padding: 14px 0;
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .page {
+          margin: 0;
+          break-after: page;
+        }
+
+        .page:last-child {
+          break-after: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page">
+      <div class="content">
+        <header class="header">
+          <div>
+            <p class="label">Резюме / май 2026</p>
+            <h1>Георгий Амбарцумян</h1>
+            <p class="role">Clinical Psychologist / Mental Health &amp; AI / Communications</p>
+            <div class="contact">
+              <span>Москва</span>
+              <a href="mailto:ambartsumyan24.10.1989@gmail.com">ambartsumyan24.10.1989@gmail.com</a>
+              <a href="https://rambar3000-commits.github.io/georgy-ambartsumyan/">Сайт-портфолио</a>
+            </div>
+          </div>
+          <div class="qr">
+            <img src="qr-site.png" alt="QR-код сайта">
+            <span>Сайт и PDF</span>
+          </div>
+        </header>
+
+        <p class="summary">
+          <strong>Клинический психолог с шестилетней практикой</strong> в работе с тревогой,
+          кризисными состояниями и выгоранием. Два года ежедневно применяю Claude и
+          ChatGPT; переношу психологическую экспертизу в AI-сценарии, где особенно важны
+          безопасность, эмпатия и точная работа с языком.
+        </p>
+
+        <div class="metrics">
+          <div class="metric"><b>6</b><span>лет практики</span></div>
+          <div class="metric"><b>2</b><span>года с LLM</span></div>
+          <div class="metric"><b>3</b><span>года SMM</span></div>
+          <div class="metric"><b>2</b><span>образования</span></div>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">Целевые направления</h2>
+          <div class="roles">
+            <article class="role-card">
+              <h3>Mental Health &amp; AI</h3>
+              <p>Психологическая экспертиза для чувствительных пользовательских сценариев.</p>
+            </article>
+            <article class="role-card">
+              <h3>AI Safety / Trust &amp; Safety</h3>
+              <p>Чувствительные сценарии, mental health и безопасные границы ответа.</p>
+            </article>
+            <article class="role-card">
+              <h3>AI Evaluation</h3>
+              <p>Оценка ответов, критерии качества, тональность и фактология.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Опыт</h2>
+          <article class="job">
+            <div class="date">
+              2020 - настоящее время
+              <strong>6 лет</strong>
+            </div>
+            <div>
+              <h3>Клинический психолог</h3>
+              <p class="company">Частная практика / клиники</p>
+              <ul>
+                <li>Индивидуальное консультирование взрослых: тревога, депрессивные состояния, кризисы, отношения и выгорание.</li>
+                <li>Психологическая диагностика, формулирование терапевтической задачи и ведение длительных случаев.</li>
+                <li>Работа в когнитивно-поведенческом и интегративном подходах.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job">
+            <div class="date">
+              2024 - настоящее время
+              <strong>2 года</strong>
+            </div>
+            <div>
+              <h3>AI-практик: LLM и продуктовые эксперименты</h3>
+              <p class="company">Самостоятельные проекты с Claude, ChatGPT и AI-tooling</p>
+              <ul>
+                <li>Ежедневное применение LLM в разработке сайтов, анализе, исследованиях и копирайтинге.</li>
+                <li>Оценка ответов на темы mental health с опорой на клинический опыт; внимание к безопасной тональности.</li>
+                <li>Prompt engineering, Claude Code и Cursor; проверка фактологии и ограничений моделей.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="job">
+            <div class="date">
+              2015 - 2018
+              <strong>3 года</strong>
+            </div>
+            <div>
+              <h3>SMM-специалист и специалист по рекламе</h3>
+              <p class="company">Брендовые и предпринимательские проекты</p>
+              <ul>
+                <li>Контент-стратегии, копирайтинг, рекламные кампании, аналитика креативов и A/B-тесты.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <div class="bottom-grid">
+          <section>
+            <h2 class="section-title">Компетенции</h2>
+            <div class="skill">
+              <h3>Психология</h3>
+              <p>Клиническая диагностика, КПТ, кризисное консультирование, mental health domain expertise.</p>
+            </div>
+            <div class="skill">
+              <h3>AI &amp; LLM</h3>
+              <p>Claude, ChatGPT, prompt engineering, evaluation, Claude Code, Cursor, фактчекинг и safety-границы.</p>
+            </div>
+            <div class="skill">
+              <h3>Коммуникации и tech</h3>
+              <p>Копирайтинг, редактура, коммуникационные стратегии, HTML/CSS/JS, no-code, базовый Python и Pandas.</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="section-title">Образование</h2>
+            <article class="education-item">
+              <p class="year">2020</p>
+              <h3>Институт психотерапии и клинической психологии</h3>
+              <p>Клиническая психология, профессиональная переподготовка</p>
+            </article>
+            <article class="education-item">
+              <p class="year">2014</p>
+              <h3>Российский университет дружбы народов</h3>
+              <p>Связи с общественностью, специалист по PR и коммуникациям</p>
+            </article>
+            <h2 class="section-title">Языки</h2>
+            <p class="language">
+              <strong>Русский</strong> - родной<br>
+              <strong>Английский</strong> - Upper Intermediate, ISE Brighton (2005, 2006)<br>
+              <strong>Итальянский</strong> - Elementary (A2)
+            </p>
+          </section>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Сайт: rambar3000-commits.github.io/georgy-ambartsumyan</span>
+        <span>1 / 1</span>
+      </footer>
+    </section>
+  </body>
+</html>
